@@ -77,31 +77,31 @@ python run.py
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-(![alt text](image-3.png))
+![alt text](image-3.png)
 
 ### 🔐 Login Page
-(![alt text](image-7.png))
+![alt text](image-7.png)
 
 ### 📝 Register Page
-(![alt text](image-8.png))
+![alt text](image-8.png)
 
 ### 📊 Dashboard
-(![alt text](image-2.png))
+![alt text](image-2.png)
 
 ### 👩‍🎓 Students Page
-(![alt text](image.png))
+![alt text](image.png)
 
 ### ➕ Add Student
-(![alt text](image-1.png))
+![alt text](image-1.png)
 
 ### 📚 Courses Page
-(![alt text](image-4.png))
+![alt text](image-4.png)
 
 ### ➕ Add Courses
-(![alt text](image-5.png))
+![alt text](image-5.png)
 
 ### Users Page
-(![alt text](image-6.png))
+![alt text](image-6.png)
 
 ---
 
