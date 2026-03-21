@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Edit Student</h2>
+    <p class="form-subtitle">Update student information and grades.</p>
+
+    <form method="POST">
+        <label for="student_code">Student Code</label>
+        <input type="text" name="student_code" id="student_code" value="{{ student.student_code }}">
+
+        <label for="name">Student Name</label>
+        <input type="text" name="name" id="name" value="{{ student.name }}">
+
+        <label for="grades">Grades</label>
+        <input type="text" name="grades" id="grades" value="{{ student.get_grades_list() | join(',') }}">
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

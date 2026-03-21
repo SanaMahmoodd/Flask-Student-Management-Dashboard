@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-page">
+    <div class="dashboard-header">
+        <h1>Welcome, <span class="welcome-name">{{ user.username }}</span> 👋</h1>
+        <p>Manage students and monitor your system from one dashboard.</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Students</h3>
+            <p>{{ students_count }}</p>
+        </div>
+
+        <div class="stat-card">
+    <h3>Total Courses</h3>
+    <p>{{ courses_count }}</p>
+</div>
+
+        <div class="stat-card">
+            <h3>Quick Action</h3>
+            <a href="{{ url_for('students.add_student') }}" class="btn btn-primary">Add Student</a>
+        </div>
+
+        <div class="stat-card">
+            <h3>Manage Records</h3>
+            <a href="{{ url_for('students.list_students') }}" class="btn btn-secondary">View Students</a>
+        </div>
+    </div>
+
+<div class="recent-section">
+    <h2>Recent Students</h2>
+
+    {% if recent_students %}
+        <div class="table-wrapper">
+            <table class="students-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Student Code</th>
+                        <th>Name</th>
+                        <th>Grades</th>
+                        <th>Average</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in recent_students %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.student_code }}</td>
+                        <td>
+    <a href="{{ url_for('students.student_details', student_id=student.id) }}" class="student-name-link">
+        {{ student.name }}
+    </a>
+</td>
+                        <td>{{ student.get_grades_list() | join(', ') }}</td>
+                        <td>{{ student.calculate_average() }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="empty-box">
+            <h3>No students added yet</h3>
+            <p>Use the dashboard to add your first student.</p>
+        </div>
+    {% endif %}
+</div>
+</div>
+{% endblock %}

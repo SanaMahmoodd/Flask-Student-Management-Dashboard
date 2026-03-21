@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-layout">
+
+    <!-- الصورة -->
+    <div class="auth-image">
+        <img src="{{ url_for('static', filename='img/register.png') }}" alt="register image">
+    </div>
+
+    <!-- الفورم -->
+    <div class="auth-container">
+        <h2>Create Account</h2>
+        <p class="form-subtitle">Create your account to access the dashboard.</p>
+
+        <form method="POST">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="auth-footer">
+            Already have an account?
+            <a href="{{ url_for('auth.login') }}">Login</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

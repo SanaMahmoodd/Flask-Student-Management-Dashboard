@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="users-page">
+    <div class="section-header">
+        <div>
+            <h2>Users Management</h2>
+            <p class="section-subtitle">View and manage registered users in the system.</p>
+        </div>
+    </div>
+
+    {% if users %}
+    <div class="users-table-wrapper">
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td class="actions">
+                        <a href="{{ url_for('users.edit_user', user_id=user.id) }}" class="btn-small edit-btn">Edit</a>
+
+                        <form action="{{ url_for('users.delete_user', user_id=user.id) }}"
+                              method="POST"
+                              class="delete-form"
+                              onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <button type="submit" class="btn-small delete-btn">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-box">
+        <h3>No users found</h3>
+        <p>No registered users are available yet.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

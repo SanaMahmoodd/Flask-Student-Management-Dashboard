@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="student-details-page">
+    <div class="details-card">
+        <div class="details-header">
+            <h2>Student Details</h2>
+            <p>View complete student information and grades.</p>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-item">
+                <span class="detail-label">Database ID</span>
+                <span class="detail-value">{{ student.id }}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Student Code</span>
+                <span class="detail-value">{{ student.student_code }}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Student Name</span>
+                <span class="detail-value">{{ student.name }}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Average Grade</span>
+                <span class="detail-value highlight">{{ student.calculate_average() }}</span>
+            </div>
+        </div>
+
+        <div class="grades-section">
+            <h3>Grades</h3>
+
+            {% set grades = student.get_grades_list() %}
+            {% if grades %}
+                <div class="grades-list">
+                    {% for grade in grades %}
+                        <div class="grade-box">{{ grade }}</div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No grades available.</p>
+            {% endif %}
+        </div>
+
+        <div class="details-actions">
+            <a href="{{ url_for('students.edit_student', student_id=student.id) }}" class="btn btn-primary">Edit Student</a>
+            <a href="{{ url_for('students.list_students') }}" class="btn btn-secondary">Back to Students</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

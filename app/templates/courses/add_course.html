@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Add Course</h2>
+    <p class="form-subtitle">Enter course information below.</p>
+
+    <form method="POST">
+        <label for="course_code">Course Code</label>
+        <input type="text" name="course_code" id="course_code" placeholder="Enter course code">
+
+        <label for="title">Course Title</label>
+        <input type="text" name="title" id="title" placeholder="Enter course title">
+
+        <label for="credit_hours">Credit Hours</label>
+        <input type="number" name="credit_hours" id="credit_hours" placeholder="Enter credit hours">
+
+        <button type="submit">Add Course</button>
+    </form>
+</div>
+{% endblock %}

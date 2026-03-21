@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-layout">
+    
+    <div class="auth-image">
+        <img src="{{ url_for('static', filename='img/login.png') }}" alt="login image">
+    </div>
+
+    <div class="auth-container">
+        <h2>Welcome Back</h2>
+        <p class="form-subtitle">Login to continue to your dashboard.</p>
+
+        <form method="POST">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter your username">
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="auth-footer">
+            Don’t have an account?
+            <a href="{{ url_for('auth.register') }}">Register</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

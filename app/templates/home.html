@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Flask Student Management Dashboard</h1>
+        <p>
+            A modern and user-friendly web application designed to simplify
+            student, course, and user management. Built with Flask, SQLite,
+            authentication, CRUD operations, and REST API support.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Get Started</a>
+            <a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary">View Dashboard</a>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <h2>Core Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Secure Authentication</h3>
+            <p>
+                Register, log in, and securely manage access to protected pages
+                with Flask-Login authentication.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Student Management</h3>
+            <p>
+                Add, view, update, and delete student records with an organized
+                and easy-to-use interface.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Course Management</h3>
+            <p>
+                Manage courses efficiently and connect them with students
+                through structured database relationships.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>REST API & Testing</h3>
+            <p>
+                Access application resources through API endpoints and validate
+                functionality with a Flask testing suite.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="about-box">
+        <h2>About This Project</h2>
+        <p>
+            This application was developed as a capstone project to demonstrate
+            full-stack backend and web development skills using Flask. It follows
+            a modular architecture with blueprints, supports database operations,
+            authentication workflows, HTML + Jinja templates, and RESTful APIs.
+        </p>
+    </div>
+</section>
+
+<section class="tech-section">
+    <h2>Technologies Used</h2>
+    <div class="tech-tags">
+        <span>Flask</span>
+        <span>SQLite</span>
+        <span>SQLAlchemy</span>
+        <span>Flask-Login</span>
+        <span>Flask-Migrate</span>
+        <span>Jinja2</span>
+        <span>HTML/CSS</span>
+        <span>REST API</span>
+        <span>Pytest</span>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Start Managing Your System Smarter</h2>
+    <p>
+        Organize students, courses, and users in one professional dashboard.
+    </p>
+    <div class="hero-buttons">
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-secondary">Create Account</a>
+    </div>
+</section>
+{% endblock %}
