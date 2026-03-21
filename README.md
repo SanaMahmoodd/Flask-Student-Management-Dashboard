@@ -77,7 +77,7 @@ python run.py
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![alt text]image-3.png
+![alt text](image-3.png)
 
 ### 🔐 Login Page
 ![alt text](image-7.png)
